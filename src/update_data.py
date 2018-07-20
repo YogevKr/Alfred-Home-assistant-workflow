@@ -89,7 +89,7 @@ def updateData(wf):
             sys.stderr.write("longitude : " + longitude + '\n')
         
 
-        friendly_name = item['attributes']['friendly_name']
+        friendly_name = item['attributes'].get('friendly_name')
         search_words = getSearchWords(icon, unit, state, friendly_name);
 
         ent = {entity_id : {'type' : ent_type, 'name' : name, 'entity_id' : entity_id, 'icon' : icon, 'friendly_name' : friendly_name, 'unit' : unit, 'state' : state, 'longitude' : longitude, 'latitude' : latitude, 'search_words' : search_words}}
